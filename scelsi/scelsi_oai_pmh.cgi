@@ -54,7 +54,6 @@ my @METADATAFORMATS =    # qw/ead-san eac-san scons-san ricerca-san/
 
 
 my $dbh = DBI->connect("dbi:mysql:dbname=$connect_info->{dbname};host=$connect_info->{host};",$connect_info->{user},$connect_info->{password},$connect_info->{options}) || die("Cannot open db");
-# my $dbh = DBI->connect('dbi:mysql:dbname=Scelsi;host=127.0.0.1;','root','managgia', {AutoCommit=>1, mysql_enable_utf8=>1}) || die("Cannot open db");
 
 my $q = CGI->new();
 $q->charset('UTF-8');
@@ -245,7 +244,6 @@ sub ListIdentifiers {
 	# 
     }
 
-    #  $res .= qq(<resumptionToken expirationDate="2015-08-19T14:59:06Z" completeListSize="99735" cursor="0">1439992746628!50!99735!ead-san!san!0001-01-01!9999-12-31</resumptionToken>);
     $res .= qq(
 </ListIdentifiers></OAI-PMH>
 <!-- resumptionToken: $resumptionToken
